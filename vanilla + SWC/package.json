@@ -1,0 +1,15 @@
+{
+  "description": "",
+  "devDependencies": {
+    "@swc/cli": "^0.3.10",
+    "@swc/core": "^1.4.7"
+  },
+  "scripts": {
+    "build": "swc ./src/*.js -d ./dist/",
+    "watch": "npm run build -- -w"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "swc": "^1.0.11"
+  }
+}

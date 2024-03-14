@@ -1,0 +1,12 @@
+create-react-app/node_modules
+html-vs-react/node_modules
+html-vs-react/.parcel-cache
+html-vs-react/dist
+next/node_modules
+vanilla + SWC/node_modules
+vanilla + SWC/dist
+vite-preact/node_modules
+vite-swelte/node_modules
+vite-swelte/.vscode
+vite-react/node_modules
+webpack/node_modules
