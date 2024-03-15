@@ -2,7 +2,7 @@ import React from "react";
 import ItemMolecule from "../molecules/ItemMolecule";
 import TypographyHeading3hAtom from "../atoms/TypographyHeading3Atom";
 
-const ListTableOrganisms = ({ title, data }) => {
+const ListTableOrganism = ({ title, data }) => {
   return (
     <>
       <TypographyHeading3hAtom text={title} />
@@ -18,4 +18,4 @@ const ListTableOrganisms = ({ title, data }) => {
   );
 };
 
-export default ListTableOrganisms;
+export default ListTableOrganism;
