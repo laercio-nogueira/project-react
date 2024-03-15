@@ -1,10 +1,12 @@
 import React from "react";
-import ListTableOrganisms from "../organisms/ListTableOrganisms";
+import ListTableOrganism from "../organisms/ListTableOrganism";
+import CountNumberOrganism from "../organisms/CountNumberOrganism";
 
-const ListDataUsersTemplate = ({ title, data }) => {
+const ListDataUsersTemplate = ({ title, data, handlers, count }) => {
   return (
     <div className="container">
-      <ListTableOrganisms title={title} data={data} />
+      <ListTableOrganism title={title} data={data} />
+      <CountNumberOrganism count={count} handlers={handlers} />
     </div>
   );
 };

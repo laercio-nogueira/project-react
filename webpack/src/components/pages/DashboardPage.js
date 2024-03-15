@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ListDataUsersTemplate from "../templates/ListDataUsersTemplate";
 
 const DashboardPage = () => {
@@ -23,8 +23,20 @@ const DashboardPage = () => {
     }
   ]
 
+  const [count, setCount] = useState(0);
+  const handlers = [
+    { appearance: "primary", textButton: "Reset", onClick: () => setCount(0) },
+    { appearance: "success", textButton: "Adicionar", onClick: () => setCount(count + 1) },
+    { appearance: "danger", textButton: "Remover", onClick: () => setCount(count - 1) },
+  ]
+
   return (
-    <ListDataUsersTemplate title={title} data={data} />
+    <ListDataUsersTemplate 
+      title={title} 
+      data={data} 
+      handlers={handlers} 
+      count={count} 
+    />
   );
 };
 

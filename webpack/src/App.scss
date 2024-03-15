@@ -29,8 +29,26 @@ h1 {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
   width: 95%;
   margin: 0 auto;
+}
+
+.mt-1 {
+  margin-top: 5px;
+}
+
+.mt-2 {
+  margin-top: 10px;
+}
+
+.mt-3 {
+  margin-top: 15px;
+}
+
+.mt-4 {
+  margin-top: 20px;
+}
+
+.mt-5 {
+  margin-top: 25px;
 }
