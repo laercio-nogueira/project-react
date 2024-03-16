@@ -1,19 +1,12 @@
 import React from "react";
-import ItemMolecule from "../molecules/ItemMolecule";
 import TypographyHeading3hAtom from "../atoms/TypographyHeading3Atom";
+import TableMolecule from "../molecules/TableMolecule";
 
-const ListTableOrganism = ({ title, data }) => {
+const ListTableOrganism = ({ title, data, legendTable }) => {
   return (
     <>
       <TypographyHeading3hAtom text={title} />
-      {
-        data.map((item, index) => (
-          <ItemMolecule
-            key={index}
-            { ...item }
-          />
-        ))
-      }
+      <TableMolecule data={data} legendTable={legendTable} />
     </>
   );
 };

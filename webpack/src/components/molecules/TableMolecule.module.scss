@@ -1,0 +1,31 @@
+.table {
+  display: table;
+  max-width: 100%;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+}
+
+.thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-top: 1px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  padding: 22px;
+
+  & th {
+    padding: 10px
+  }
+}
+
+.tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+
+  & td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+}

@@ -1,0 +1,14 @@
+.navbar {
+  background: #9ec5fe;
+  padding: 10px;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &__link{
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+}
