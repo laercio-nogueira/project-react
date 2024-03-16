@@ -1,8 +1,9 @@
-import React from "react";
+import * as React from "react";
 import { createRoot } from 'react-dom/client';
-import App from "./App";
+import Routers from "./routers";
 import "./App.scss";
 
-const el = document.getElementById("app");
-const root = createRoot(el);
-root.render(<App />);
+const appRoot = document.getElementById("app")
+appRoot.setAttribute('notranslate', true)
+createRoot(appRoot)
+  .render(<Routers />);
