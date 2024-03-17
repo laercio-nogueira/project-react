@@ -1,7 +1,7 @@
 import React from "react";
 
-const TypographyParagraphAtom = ({ text }) => (
-  <p>{text}</p>
+const TypographyParagraphAtom = ({ children }) => (
+  <p>{children}</p>
 )
 
 export default TypographyParagraphAtom

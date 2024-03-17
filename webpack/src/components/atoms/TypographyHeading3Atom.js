@@ -1,7 +1,7 @@
 import React from "react";
 
-const TypographyParagraphAtom = ({ text }) => (
-  <h3>{text}</h3>
+const TypographyHeading3Atom = ({ children }) => (
+  <h3>{children}</h3>
 )
 
-export default TypographyParagraphAtom
+export default TypographyHeading3Atom
