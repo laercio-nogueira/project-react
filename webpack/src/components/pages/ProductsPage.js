@@ -1,20 +1,45 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { HookEffects } from "../../hooks/HooksEffects";
+import { HookEffects } from "@hooks/HooksEffects";
+import { CounterContextProvider } from '@context/CounterContext'
+import { UseCounterContext } from "@hooks/HooksContexts"
+import LoadingGenericAtom from "@components/atoms/LoadingGenericAtom";
+import InputTextOrganism from "@components/organisms/InputTextOrganism";
 
 const ProductsPage = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const { dispatch, error, loading, product } = UseCounterContext();
 
-  HookEffects(`/products/${id}`, (data) => setProduct(data), setLoading);
+  HookEffects({ 
+    url: `/products/${id}`, 
+    callbackSuccess: (data) => dispatch({ type: "SUCCESS", payload: data }), 
+    callbackLoading: () => dispatch({ type: "REQUEST" }),
+    callbackError: (error) => dispatch({ type: "ERROR", payload: error })
+  });
 
   return (
     <div className="container">
-      { loading ? <p>Loading...</p> : JSON.stringify( product )}
+      { error && <p>{ error.message }</p> }
+      { loading 
+        ? <LoadingGenericAtom /> 
+        : <ul>
+            <li>{ product.id }</li>
+            <li>{ product.name }</li>
+            <li>{ product.cost }</li>
+            <li>{ JSON.stringify(product.status) }</li>
+            <li>{ product.branch }</li>
+          </ul> 
+      }
+      <hr />
+      <InputTextOrganism />
     </div>
   );
 };
 
-export default ProductsPage;
+const productPageContext = () => (
+  <CounterContextProvider>
+    <ProductsPage />
+  </CounterContextProvider>
+)
+
+export default productPageContext;

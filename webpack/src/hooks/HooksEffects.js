@@ -1,17 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect  } from "react";
 import axios from 'axios'
 
-export const HookEffects = (url, callback, setLoading) => {
+export const HookEffects = ({ url, callbackSuccess, callbackLoading, callbackError }) => {
   const urlBase = `http://localhost:9000/${url}`
 
   const request = async () => {
-    const { data } = await axios.get(urlBase)
-    setLoading && setLoading(false)
-    callback(data)
+    try {
+      const { data } = await axios.get(urlBase)
+      callbackLoading && callbackLoading(false)
+      callbackSuccess(data)
+    } catch(error) {
+      callbackLoading && callbackLoading(false)
+      callbackError && callbackError(error)
+      console.log(error)
+    }
   }
 
   useEffect(() => {
-    setLoading && setLoading(true)
+    callbackLoading && callbackLoading(true)
     request()
   }, [])
 }
