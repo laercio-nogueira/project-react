@@ -1,12 +1,12 @@
 import React from "react";
 import ButtonGenericAtom from "../atoms/ButtonGenericAtom";
-import TypographyParagraphAtom from "../atoms/TypographyHeading3Atom";
+import TypographyHeading3Atom from "../atoms/TypographyHeading3Atom";
 
 const CountNumberOrganism = ({ handlers, count }) => {
   return (
     <>
       <div className="mt-2">
-      <TypographyParagraphAtom text="Contador" />
+      <TypographyHeading3Atom>Contador</TypographyHeading3Atom>
         {
           handlers.map((handler, index) => (
             <ButtonGenericAtom

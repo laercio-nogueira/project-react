@@ -5,7 +5,7 @@ import TableMolecule from "../molecules/TableMolecule";
 const ListTableOrganism = ({ title, data, legendTable }) => {
   return (
     <>
-      <TypographyHeading3hAtom text={title} />
+      <TypographyHeading3hAtom>{ title }</TypographyHeading3hAtom>
       <TableMolecule data={data} legendTable={legendTable} />
     </>
   );
